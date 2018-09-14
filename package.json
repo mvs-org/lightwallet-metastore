@@ -1,0 +1,26 @@
+{
+  "name": "mvs-lightwallet-metastore",
+  "version": "0.1.0",
+  "description": "MVS Lightwallet storage for metadata to make users life a better experience",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "metaverse",
+    "wallet",
+    "api"
+  ],
+  "author": "Sven Mutzl",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "metaversejs": "^0.3.43",
+    "method-override": "^2.3.9",
+    "mongodb": "^3.1.4",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
+}

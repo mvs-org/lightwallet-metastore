@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    api:
+        build: .
+        ports:
+          - "8090:8090"
+        links:
+            - mongodb
+        environment:
+            - MONGO_HOST=mongodb
+    mongodb:
+        image: mongo
+        ports:
+          - "27017:27017"
