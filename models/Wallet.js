@@ -10,11 +10,7 @@ function addWallet(wallet) {
     return mongo.connect()
         .then(db => db.collection('multisig'))
         .then(col => col.insert(wallet))
-        .then(() => wallet)
-        .catch((error)=>{
-            console.error(error);
-            throw Error('Error storing wallet');
-        });
+        .then(() => wallet);
 }
 
 function getWallet(address) {

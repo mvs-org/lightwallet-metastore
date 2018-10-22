@@ -39,7 +39,7 @@ function addWallet(req, res) {
                     break;
                 default:
                     console.error(error);
-                    res.status(400).json(Message.error(error.message));
+                    res.status(400).json(Message.error('Error storing wallet'));
             }
         });
 }
