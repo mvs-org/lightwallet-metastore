@@ -30,11 +30,17 @@ function addWallet(req, res) {
             a: multisig.address
         }))
         .then((wallet) => {
-            res.status(200).json(Message.success(wallet));
+            res.status(200).json(Message.success(wallet, "NEW"));
         })
         .catch((error) => {
-            console.error(error);
-            res.status(400).json(Message.error(error.message));
+            switch (error.code) {
+                case 11000:
+                    res.status(200).json(Message.success(undefined, "DUPLICATE"));
+                    break;
+                default:
+                    console.error(error);
+                    res.status(400).json(Message.error(error.message));
+            }
         });
 }
 
